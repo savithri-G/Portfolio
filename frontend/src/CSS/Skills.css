@@ -1,0 +1,91 @@
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 850px;          /* ⬅️ set max width like your red box */
+  margin: 0 auto;            /* ⬅️ center the section */
+  width: 100%;
+  padding: 0 15px;
+}
+
+.skill-card {
+  background: #333;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1); /* lift & enlarge slightly */
+  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.3); /* glowing yellow shadow */
+}
+.skill-card:active {
+  transform: translateY(0); /* reset on click */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* reset shadow */
+}
+.progress-container {
+  background: #1e1e1e; /* ← older background to match your body */
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 0.4rem;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Skill Title */
+.skill-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #eeeeee;
+  margin-bottom: 0.5rem;
+}
+/* Skill Description */
+.skill-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+/* Progress Bar Label */
+.skill-progress {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+
+/* Optional: Show percentage inside progress bar */
+.progress-label {
+  font-size: 0.85rem;
+  color: #ffc107;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    max-width: 100%; /* Full width on smaller screens */
+    padding: 0 20px; /* Add some horizontal padding */
+  }
+  
+  .skill-card {
+    padding: 15px; /* Slightly smaller padding on mobile */
+  }
+  
+  .skill-title {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+  
+  .progress-container {
+    height: 8px; /* Smaller progress bar height on mobile */
+  }
+  
+  .progress-label {
+    font-size: 0.75rem; /* Smaller percentage text on mobile */
+  }
+}

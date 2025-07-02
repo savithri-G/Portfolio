@@ -1,0 +1,73 @@
+#experience {
+  padding: 60px 0;
+  text-align: center;
+ 
+}
+
+#experience h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #f3f4f6;
+}
+
+.experience-card {
+ 
+  color: #f9fafb;
+  padding: 3rem;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.experience-card h5 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fde68a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.experience-item {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  gap: 15px;
+  font-size: 1.05rem;
+}
+
+.experience-icon {
+  color: #facc15;
+  font-size: 1.3rem;
+  margin-top: 4px;
+}
+
+.view-project-btn {
+  display: inline-block;
+  margin-left: 12px;
+  background-color: #ffc107;
+  color: #000000;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-project-btn:hover {
+  border: 1px solid #ffc107;
+  color: #ffc107;
+  background-color: transparent;
+  transform: scale(1.05);
+}

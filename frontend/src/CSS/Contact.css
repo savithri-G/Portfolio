@@ -1,0 +1,72 @@
+.hire-me-section {
+  padding: 50px 20px;
+  color: #f9fafb;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  
+}
+
+.hire-me-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.contact-form {
+  padding: 80px 80px 10px 80px;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0px;
+ 
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #eedfb3;
+  color: #121213;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  padding: 12px 15px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #535045;
+  font-style: italic;
+  padding: 0 5px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffc107;
+  background: #e6c154;
+  font-style: italic;
+  box-shadow: none;
+  padding: 12px 15px;
+}
+
+.custom-btn {
+  background-color: #ffc107;
+  color: rgb(10, 9, 9);
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-btn:hover {
+  background-color: transparent;
+  color: #ffc107;
+  border: 1px solid #ffc107;
+  transform: scale(1.05);
+}
+
+.status-msg {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 0;
+}

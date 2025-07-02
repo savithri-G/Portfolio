@@ -1,0 +1,81 @@
+
+/* Software Section */
+#softwaretools {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+#softwaretools h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Grid to form 2 rows of 4 items */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Individual card */
+.circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SVG Circle container */
+.circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+/* Progress circle */
+.circle {
+  transform: rotate(-90deg);
+}
+
+/* Icon at the center */
+.circle-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+.icon-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  color: white;
+  z-index: 1;
+}
+
+.circle-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.circle-icon img:hover {
+transform: scale(1.3); 
+  transition: transform 0.3s ease;
+}
+/* Label below the circle */
+.tool-label {
+  margin-top: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Optional responsiveness */
+@media screen and (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

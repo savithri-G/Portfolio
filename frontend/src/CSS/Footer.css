@@ -1,0 +1,115 @@
+/* Footer Main */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  color: #e2e8f0; /* light text */
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Footer Links */
+footer a {
+  color: #facc15; /* yellow-400 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fde68a; /* yellow-300 */
+  text-decoration: underline;
+}
+
+/* Footer Icon spacing */
+footer svg {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Footer Section (inline elements) */
+footer small span {
+  display: inline-block;
+  margin-right: 20px;
+  color: #ffc107;
+}
+footer small span:hover {
+  color: #fde68a;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* Social icons wrapper (if needed later) */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  font-size: 1.3rem;
+  color: #facc15;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #fde68a;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  footer small span {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  footer .social-icons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer .social-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  background-color: #ffc107;
+  color: #1e293b; /* dark text */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: transparent;
+  color: #ffc107;
+  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.3);
+  transform: scale(1.1);
+}
+.scroll-to-top:focus {
+  outline: none;
+}
+@media (max-width: 480px) {
+  footer {
+    padding: 15px 5px;
+  }
+
+  footer small {
+    font-size: 0.85rem;
+  }
+
+  footer .social-icons a {
+    font-size: 1.2rem;
+  }
+}
