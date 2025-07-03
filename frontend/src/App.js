@@ -46,6 +46,22 @@ const [showScrollTop, setShowScrollTop] = useState(false);
 const [form, setForm] = useState({ name: "", email: "", message: "" });
 const [status, setStatus] = useState("");
 
+const sendMessage = async (form) => {
+  try {
+    const response = await fetch("https://portfolio-fqog.onrender.com/contact.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(form).toString(),
+    });
+
+    return await response.json(); // expects JSON like { success: true }
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+};
+
 const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -409,7 +425,7 @@ const handleSubmit = async (e) => {
         {/* Contact Section */}
         <section id="contact" className="hire-me-section mb-5">
           <h2 className="text-center mb-4 display-5 fw-bold">Hire Me</h2>
-          <form onSubmit={handleSubmit} className="contact-form" action="https://portfolio-fqog.onrender.com/contact.php" method="POST">
+          <form onSubmit={handleSubmit} className="contact-form">
             <div className="mb-3">
               <input
                 type="text"
