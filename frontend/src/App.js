@@ -409,7 +409,7 @@ const handleSubmit = async (e) => {
         {/* Contact Section */}
         <section id="contact" className="hire-me-section mb-5">
           <h2 className="text-center mb-4 display-5 fw-bold">Hire Me</h2>
-          <form onSubmit={handleSubmit} className="contact-form">
+          <form onSubmit={handleSubmit} className="contact-form" action="https://portfolio-fqog.onrender.com/contact.php" method="POST">
             <div className="mb-3">
               <input
                 type="text"
