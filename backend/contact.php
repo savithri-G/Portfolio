@@ -14,7 +14,7 @@ header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json");
 
 // Get POST data
-$data = json_decode(file_get_contents("php://input"), true);
+$data = $_POST;
 
 // Check required fields
 if (empty($data['name']) || empty($data['email']) || empty($data['message'])) {
