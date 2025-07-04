@@ -444,7 +444,7 @@ const handleSubmit = async (e) => {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <button type="submit " className="btn custom-btn mt-3">
+            <button type="submit" className="btn custom-btn mt-3">
               📩 Send Message 
             </button>
             <ToastContainer position="bottom-center" autoClose={5000} 
