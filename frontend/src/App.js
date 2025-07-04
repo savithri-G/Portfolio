@@ -51,9 +51,9 @@ const sendMessage = async (form) => {
     const response = await fetch("https://portfolio-fqog.onrender.com/contact.php", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
-      body: new URLSearchParams(form).toString(),
+      body:JSON.stringify(form), 
     });
 
     return await response.json(); // expects JSON like { success: true }
@@ -69,6 +69,7 @@ const handleChange = (e) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
     setStatus("Sending message...");
+    console.log("Form submitted:", form); // ✅ Add this line
     const isValidEmail = /\S+@\S+\.\S+/.test(form.email);
     if (!isValidEmail) {
       toast.error("❌ Please enter a valid email address");
