@@ -22,49 +22,34 @@ if (empty($data['name']) || empty($data['email']) || empty($data['message'])) {
     exit;
 }
 
-// Database connection
-$conn = new mysqli("localhost", "root", "", "portfolio");
-if ($conn->connect_error) {
-    echo json_encode(["success" => false, "message" => "DB connection failed"]);
-    exit;
-}
-
 // Sanitize input
-$name = $conn->real_escape_string($data['name']);
-$email = $conn->real_escape_string($data['email']);
-$message = $conn->real_escape_string($data['message']);
+$name = htmlspecialchars(trim($data['name']));
+$email = htmlspecialchars(trim($data['email']));
+$message = htmlspecialchars(trim($data['message']));
 
-// Save to DB
-$sql = "INSERT INTO messages (name, email, message) VALUES ('$name', '$email', '$message')";
-if ($conn->query($sql)) {
-    // Send email
-    $mail = new PHPMailer(true);
+// Send email
+$mail = new PHPMailer(true);
 
-    try {
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'savithri14pt@gmail.com';       // Your Gmail
-        $mail->Password   = 'wuln hfpm wxbh gucf';          // App Password
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+try {
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'savithri14pt@gmail.com';       // Your Gmail address
+    $mail->Password   = 'wuln hfpm wxbh gucf';          // Your Gmail App Password
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
 
-        $mail->setFrom($email, $name);
-        $mail->addAddress('savithri14pt@gmail.com');       // Your receiving email
+    $mail->setFrom($email, $name);
+    $mail->addAddress('savithri14pt@gmail.com');       // Where you want to receive the email
 
-        $mail->isHTML(false);
-        $mail->Subject = 'New Portfolio Message';
-        $mail->Body    = "Name: $name\nEmail: $email\nMessage:\n$message";
+    $mail->isHTML(false);
+    $mail->Subject = 'New Portfolio Message';
+    $mail->Body    = "Name: $name\nEmail: $email\nMessage:\n$message";
 
-        $mail->send();
-        echo json_encode(["success" => true]);
-    } catch (Exception $e) {
-        file_put_contents("email-error.log", "Email failed: " . $mail->ErrorInfo);
-        echo json_encode(["success" => true, "message" => "Saved but email failed"]);
-    }
-} else {
-    echo json_encode(["success" => false, "message" => "Failed to save to database"]);
+    $mail->send();
+    echo json_encode(["success" => true]);
+} catch (Exception $e) {
+    file_put_contents("email-error.log", "Email failed: " . $mail->ErrorInfo);
+    echo json_encode(["success" => true, "message" => "Saved but email failed"]);
 }
-
-$conn->close();
 ?>
