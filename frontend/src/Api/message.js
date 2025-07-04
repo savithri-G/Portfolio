@@ -6,9 +6,9 @@ export const sendMessage = async (form) => {
     const res = await fetch("https://portfolio-fqog.onrender.com/contact.php", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
-      body: new URLSearchParams(form).toString(),
+      body: JSON.stringify(form),
     });
 
     const result = await res.json();
