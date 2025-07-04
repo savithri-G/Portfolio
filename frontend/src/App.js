@@ -46,22 +46,6 @@ const [showScrollTop, setShowScrollTop] = useState(false);
 const [form, setForm] = useState({ name: "", email: "", message: "" });
 const [status, setStatus] = useState("");
 
-const sendMessage = async (form) => {
-  try {
-    const response = await fetch("https://portfolio-fqog.onrender.com/contact.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body:JSON.stringify(form), 
-    });
-
-    return await response.json(); // expects JSON like { success: true }
-  } catch (error) {
-    return { success: false, error: error.message };
-  }
-};
-
 const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
