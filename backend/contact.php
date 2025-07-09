@@ -1,5 +1,5 @@
 <?php
-
+// Minor update to trigger redeploy
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
